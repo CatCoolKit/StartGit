@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\manhc\\OneDrive\\Documents\\VPProjects\\Project_PRN211_Group_3\\",
+  "WorkspaceRootPath": "C:\\Users\\manhc\\OneDrive\\Documents\\VPProjects\\StartGit\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8027B9CF-81DA-4F59-B4A3-A5469C745B45}|Project_PRN211_Group_3\\Project_PRN211_Group_3.csproj|c:\\users\\manhc\\onedrive\\documents\\vpprojects\\project_prn211_group_3\\project_prn211_group_3\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{8027B9CF-81DA-4F59-B4A3-A5469C745B45}|Project_PRN211_Group_3\\Project_PRN211_Group_3.csproj|c:\\users\\manhc\\onedrive\\documents\\vpprojects\\startgit\\project_prn211_group_3\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{8027B9CF-81DA-4F59-B4A3-A5469C745B45}|Project_PRN211_Group_3\\Project_PRN211_Group_3.csproj|solutionrelative:project_prn211_group_3\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -24,9 +24,9 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\manhc\\OneDrive\\Documents\\VPProjects\\Project_PRN211_Group_3\\Project_PRN211_Group_3\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\manhc\\OneDrive\\Documents\\VPProjects\\StartGit\\Project_PRN211_Group_3\\Form1.cs",
               "RelativeDocumentMoniker": "Project_PRN211_Group_3\\Form1.cs",
-              "ToolTip": "C:\\Users\\manhc\\OneDrive\\Documents\\VPProjects\\Project_PRN211_Group_3\\Project_PRN211_Group_3\\Form1.cs [Design]",
+              "ToolTip": "C:\\Users\\manhc\\OneDrive\\Documents\\VPProjects\\StartGit\\Project_PRN211_Group_3\\Form1.cs [Design]",
               "RelativeToolTip": "Project_PRN211_Group_3\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-13T16:30:59.657Z",
