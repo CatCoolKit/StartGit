@@ -156,10 +156,12 @@
             <version>5.11.0</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- Byte Buddy -->
         <dependency>
             <groupId>net.bytebuddy</groupId>
             <artifactId>byte-buddy</artifactId>
-            <scope>test</scope>
+            <version>1.12.8</version>
         </dependency>
 
 
