@@ -25,7 +25,7 @@ jobs:
         ports:
           - 1433:1433
         options: >-
-          --health-cmd "echo 'SELECT 1' | /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P YourStrong!Passw0rd"
+          --health-cmd "echo 'SELECT 1' | /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P @Manhcuong"
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
