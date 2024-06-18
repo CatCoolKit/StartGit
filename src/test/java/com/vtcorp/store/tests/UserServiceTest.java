@@ -41,7 +41,7 @@ public class UserServiceTest {
 
     @Test
     public void testUpdateUser() {
-        String newCity = "Ha Noi";
+        String newCity = "Ho Chi Minh";
 
         UserDTO userDTO = new UserDTO();
         userDTO.setUsername("Tris");
