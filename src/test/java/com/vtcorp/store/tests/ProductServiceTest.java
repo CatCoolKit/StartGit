@@ -191,7 +191,7 @@ public class ProductServiceTest {
 
         // Initialize categoryIds
         categoryIds = Arrays.asList(1L, 2L);
-        categories = Arrays.asList(category, category2);
+        categories = Arrays.asList(category);
         productDTO.setCategoryIds(categoryIds);
 
         // Mocking repository and mapper methods
