@@ -19,6 +19,20 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    services:
+      sqlserver:
+        image: mcr.microsoft.com/mssql/server:2019-latest
+        ports:
+          - 1433:1433
+        options: >-
+          --health-cmd "echo 'SELECT 1' | /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P YourStrong!Passw0rd"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        env:
+          SA_PASSWORD: "YourStrong!Passw0rd"
+          ACCEPT_EULA: "Y"
+
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 17
