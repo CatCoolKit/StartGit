@@ -2,6 +2,7 @@ package com.vtcorp.store.tests;
 
 import com.vtcorp.store.dtos.ProductDTO;
 import com.vtcorp.store.entities.Brand;
+import com.vtcorp.store.entities.Category;
 import com.vtcorp.store.entities.Product;
 import com.vtcorp.store.mappers.ProductMapper;
 import com.vtcorp.store.repositories.BrandRepository;
@@ -39,10 +40,10 @@ public class ProductServiceTest {
     @MockBean
     private BrandRepository brandRepository;
 
-    @Mock
+    @MockBean
     private CategoryRepository categoryRepository;
 
-    @Mock
+    @MockBean
     private ProductMapper productMapper;
 
     @Autowired
@@ -51,6 +52,10 @@ public class ProductServiceTest {
     private ProductDTO productDTO;
     private Product addProduct;
     private Brand brand;
+    List<Category> categories;
+    List<Long> categoryIds;
+    private Category category;
+    private Category category2;
     private List<Product> mockActiveProducts;
     private List<Product> mockAllProducts;
     private Product product1;
@@ -108,6 +113,7 @@ public class ProductServiceTest {
         addProduct.setStock(productDTO.getStock());
         addProduct.setActive(productDTO.isActive());
         addProduct.setBrand(brand);
+        addProduct.setCategories(categories);
 
     }
 
@@ -175,8 +181,23 @@ public class ProductServiceTest {
 
     @Test
     public void testAddProduct_Success() {
+        category = new Category();
+        category.setCategoryId(1);
+        category.setName("Category 1");
+
+        category2 = new Category();
+        category2.setCategoryId(2);
+        category2.setName("Category 2");
+
+        // Initialize categoryIds
+        categoryIds = Arrays.asList(1L, 2L);
+        categories = Arrays.asList(category, category2);
+        productDTO.setCategoryIds(categoryIds);
+
         // Mocking repository and mapper methods
         when(brandRepository.findById(productDTO.getBrandId())).thenReturn(Optional.of(brand));
+        // Example of mocking category repository
+        when(categoryRepository.findAllById(productDTO.getCategoryIds())).thenReturn(categories);
         when(productMapper.toEntity(productDTO)).thenReturn(addProduct);
         when(productRepository.save(addProduct)).thenReturn(addProduct);
 
@@ -188,6 +209,28 @@ public class ProductServiceTest {
         assertEquals(addProduct.getName(), createdProduct.getName());
         assertEquals(addProduct.getBrand().getBrandId(), createdProduct.getBrand().getBrandId());
         verify(productRepository, times(1)).save(addProduct);
+    }
+
+    @Test
+    public void testAddProduct_NotFoundCategory() {
+        // Initialize categoryIds
+        categoryIds = Arrays.asList(1L, 2L);
+        categories = Arrays.asList();
+        productDTO.setCategoryIds(categoryIds);
+
+        // Mocking repository and mapper methods
+        when(brandRepository.findById(productDTO.getBrandId())).thenReturn(Optional.of(brand));
+        // Example of mocking category repository
+        when(categoryRepository.findAllById(productDTO.getCategoryIds())).thenReturn(categories);
+        when(productMapper.toEntity(productDTO)).thenReturn(addProduct);
+
+        RuntimeException thrownException = assertThrows(RuntimeException.class, () -> {
+            productService.addProduct(productDTO);
+        });
+
+        assertEquals("One or more categories not found", thrownException.getMessage());
+
+        verify(productRepository, never()).save(any(Product.class));
     }
 
 }
