@@ -1,4 +1,4 @@
-[![CI with GitHub Actions using Maven and JUnit | © 2024 by CH](https://github.com/CatCoolKit/StartGit/actions/workflows/ci-maven.yml/badge.svg)](https://github.com/CatCoolKit/StartGit/actions/workflows/ci-maven.yml)
+
 
 # Welcome to Math-Util Repository
 
