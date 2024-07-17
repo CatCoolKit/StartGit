@@ -8,6 +8,6 @@
 - Unit Testing source code with JUnit framework
 - ...
 
-![Screenshot]([images/screenshot.png](https://res.cloudinary.com/dxqhlxdun/image/upload/v1721226584/Screenshot_2024-07-17_212256_clyrlv.png))
+![Screenshot](https://res.cloudinary.com/dxqhlxdun/image/upload/v1721226584/Screenshot_2024-07-17_212256_clyrlv.png)
 
 #### @ 2024 CatCoolKit
